@@ -1,1 +1,50 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100&family=Roboto&display=swap');
+@import 'ngx-toastr/toastr';
+
+*{
+  margin: 0;
+  padding: 0;
+ 
+}
+
+:root{
+  --primary-color:#026467;
+  --secondary-color:#E5F9EA;
+  --body-text-color:#596392;
+  --navbar-footer-color:#F9F9F9;
+
+}
+
+body{
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  color: var(--body-text-color);
+}
+
+
+.logo{
+  border-radius: 20px;
+  background-color:var(--secondary-color);
+  padding: 5px 15px;
+  color: var(--primary-color);
+  text-decoration: none;
+  
+}
+
+.shadow-effect{
+  border: none;
+  box-shadow: 0px 0px 33px -10px rgb(71, 114, 256,0.5);
+}
+
+
+.bg-theme{
+  background-color: var(--primary-color);
+}
+
+.bg-secondary-theme{
+  background-color: var(--secondary-color);
+}
+.text-theme-primary{
+  color: var(--primary-color);
+}

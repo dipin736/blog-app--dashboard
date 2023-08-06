@@ -1,0 +1,20 @@
+header{
+    height: 100px;
+}
+.nav-link{
+    color: var(--primary-color);
+    text-transform: uppercase;
+}
+
+.logo{
+    font-size: 1.5rem;
+}
+
+
+.btn-sub{
+    border: none;
+    background-color: var(--primary-color);
+    /* width: 150px; */
+    color: var(--secondary-color);
+
+}

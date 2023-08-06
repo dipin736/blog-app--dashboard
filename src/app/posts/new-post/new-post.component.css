@@ -1,0 +1,11 @@
+.img-preview{
+    height: 300px;
+}
+
+.btn-sub{
+    border: none;
+    background-color: var(--primary-color);
+    /* width: 150px; */
+    color: var(--secondary-color);
+
+}

@@ -1,0 +1,71 @@
+.btn-sub{
+    border: none;
+    background-color: var(--primary-color);
+    /* width: 150px; */
+    color: var(--secondary-color);
+
+}
+
+/* Custom CSS to make the table responsive */
+.custom-table-container {
+    overflow-x: auto;
+  }
+  
+  .custom-table-container table {
+    width: 100%;
+    font-size: 14px; /* Adjust the font size as needed */
+  }
+
+      tr { border: 1px solid #d71818; }
+
+
+  
+  /* Media query to adjust the font size on smaller screens */
+  @media (max-width: 965px) {
+
+      /* Force table to not be like tables anymore */
+      table, thead, tbody, th, td, tr { 
+        display: block; 
+      }
+      
+      /* Hide table headers (but not display: none;, for accessibility) */
+      thead tr { 
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+      }
+      
+      tr { border: 1px solid #d71818; }
+      
+      td { 
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #bdb3b3; 
+        position: relative;
+        padding-left: 50%; 
+      }
+      
+      td:before { 
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%; 
+        padding-right: 10px; 
+        white-space: nowrap;
+      }
+      
+      /*
+      Label the data
+      */
+      td:nth-of-type(1):before { content: "Sl N0"; }
+      td:nth-of-type(2):before { content: "Image"; }
+      td:nth-of-type(3):before { content: "Title"; }
+      td:nth-of-type(4):before { content: "Excerpt"; }
+      td:nth-of-type(5):before { content: "Category" }
+      td:nth-of-type(6):before { content: "Date "}
+      td:nth-of-type(7):before { content: "Action "}
+
+  }
+  

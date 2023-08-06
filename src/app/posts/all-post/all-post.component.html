@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card shadow-effect bg-secondary-theme">
+                <div class="card-body text-center">
+                    <h3 class="text-theme-primary">All Blog Posts</h3>
+                    <p>From here you can manage your posts.</p>
+                    <button class="btn btn-info btn-sub m-2" routerLink="/post/new"> Add New Post</button>
+                    <button class="btn btn-warning ml-2" routerLink="">Back to Dashboard</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card shadow-effect">
+                <div class="card-body">
+                    <div class="custom-table-container">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-sm  shadow-effect text-center">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="col-2">Sl.No</th>
+                                        <th scope="col" class="col-3">Post Image</th>
+                                        <th scope="col" class="col-5">Title</th>
+                                        <th scope="col" class="col-2">Excerpt</th>
+                                        <th scope="col" class="col-2">Category</th>
+                                        <th scope="col" class="col-2">Date</th>
+                                        <th scope="col" class="col-2">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let data of postData; let i=index">
+                                        <td scope="row">{{i+1}}</td>
+                                        <td>
+                                            <img src="{{data.postImgPath}}" alt="" style="width: 200px;">
+                                        </td>
+                                        <td class="t1" style="font-size: small;">{{data.title}}</td>
+                                        <td style="font-size: 10px;text-align: justify;">{{data.excerpt}}</td>
+                                        <td style="font-size: 15px;">{{data.category.category}}</td>
+                                        <td style="font-size: 10px;">{{ data.cretaedAt | date}}</td>
+
+                                        <td>
+                                            <div class="btn-group" role="group" aria-label="Actions">
+                                                <button class="btn btn-warning btn-sm" routerLink="/post/new"
+                                                    [queryParams]="{ id: data.id }">Edit</button>
+                                                <button class="btn btn-danger btn-sm"
+                                                    (click)="onDelete(data.id)">Delete</button>
+
+                                                <button *ngIf="!data.isFeatured" class="btn btn-success btn-sm"
+                                                    (click)="onFeatured(data.id,true)">Mark Featured</button>
+                                                <button *ngIf="data.isFeatured" class="btn btn-info btn-sm "
+                                                    (click)="onFeatured(data.id,false)">Remove Feature</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
